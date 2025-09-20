@@ -101,7 +101,7 @@ function initializeContactForm() {
             
             // Create WhatsApp message
             const whatsappMessage = createContactWhatsAppMessage(name, email, message);
-            const whatsappUrl = `https://wa.me/2348012345678?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappUrl = `https://wa.me/2347056599602?text=${encodeURIComponent(whatsappMessage)}`;
             
             // Open WhatsApp
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
