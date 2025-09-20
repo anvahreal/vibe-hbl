@@ -134,7 +134,7 @@ function placeOrder() {
     const whatsappMessage = createWhatsAppMessage(orderSummary);
     
     // Open WhatsApp
-    const whatsappUrl = `https://wa.me/2348012345678?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/2347056599602?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     
     // Show success message
@@ -246,7 +246,7 @@ function clearCart() {
 
 // Auto-fill form for testing (development only)
 function autoFillForm() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1:5500') {
         document.getElementById('firstName').value = 'John';
         document.getElementById('lastName').value = 'Doe';
         document.getElementById('email').value = 'john.doe@example.com';
