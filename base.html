@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hooked by Lulu - Handmade Crochet Creations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #DDD6FE;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo svg {
+            height: 2.5rem;
+            width: 2.5rem;
+            color: #6B46C1;
+        }
+
+        .logo span {
+            margin-left: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #553C9A;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #553C9A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6B46C1;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-icons button {
+            background: none;
+            border: none;
+            color: #581c87;
+            cursor: pointer;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-icons button:hover {
+            color: #7c3aed;
+        }
+
+        .nav-icons svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: #f3f4f6;
+            border-radius: 9999px;
+            padding: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .search-input {
+            border: none;
+            background: transparent;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            outline: none;
+            width: 200px;
+            color: #374151;
+        }
+
+        .search-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #e5e7eb;
+            color: #7c3aed;
+        }
+
+        .search-btn svg {
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            background: #7c3aed;
+            color: white;
+            border-radius: 50%;
+            width: 1.25rem;
+            height: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .nav-container {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .logo span {
+                font-size: 1rem;
+            }
+            
+            .search-input {
+                width: 80px;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .search-container {
+                margin-right: 0.25rem;
+            }
+            
+            .nav-icons {
+                gap: 0.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f3e8d8' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            background: #6B46C1;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 9999px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #553C9A;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+            
+            .hero-btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        /* Category Filter */
+        .category-section {
+            background: white;
+            padding: 2rem 0;
+        }
+
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #c084fc;
+            background: transparent;
+            color: #7c3aed;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(141, 53, 134, 0.9);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .category-section {
+                padding: 1.5rem 0;
+            }
+            
+            .category-buttons {
+                padding: 0 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, white, #faf5ff);
+        }
+
+        .products-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: center;
+            color: #6b21a8;
+            margin-bottom: 3rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-section {
+                padding: 2rem 0;
+            }
+            
+            .products-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .products-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s;
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 16rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .add-to-cart {
+            background: #7c3aed;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #6d28d9;
+        }
+
+        .add-to-cart.added {
+            background: #16a34a;
+        }
+
+        .add-to-cart.added:hover {
+            background: #15803d;
+        }
+
+        @media (max-width: 768px) {
+            .product-image {
+                height: 12rem;
+                font-size: 3rem;
+            }
+            
+            .product-info {
+                padding: 1rem;
+            }
+            
+            .product-title {
+                font-size: 1.125rem;
+            }
+            
+            .product-price {
+                font-size: 1.25rem;
+            }
+            
+            .add-to-cart {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Product backgrounds */
+        .bg-pink-purple { background: linear-gradient(135deg, #fce7f3, #e9d5ff); }
+        .bg-yellow-orange { background: linear-gradient(135deg, #fef3c7, #fed7aa); }
+        .bg-blue-teal { background: linear-gradient(135deg, #dbeafe, #ccfbf1); }
+        .bg-green-emerald { background: linear-gradient(135deg, #dcfce7, #d1fae5); }
+        .bg-red-pink { background: linear-gradient(135deg, #fecaca, #fce7f3); }
+        .bg-purple-indigo { background: linear-gradient(135deg, #e9d5ff, #e0e7ff); }
+        .bg-amber-yellow { background: linear-gradient(135deg, #fde68a, #fef3c7); }
+        .bg-teal-cyan { background: linear-gradient(135deg, #99f6e4, #a5f3fc); }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+        }
+
+        .reviews-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #6b21a8;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .review-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .customer-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e9d5ff, #c4b5fd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .customer-name {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .review-stars {
+            font-size: 0.875rem;
+            color: #fbbf24;
+        }
+
+        .review-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .review-text {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .review-product {
+            color: #7c3aed;
+            font-weight: 500;
+            font-size: 0.875rem;
+            background: #faf5ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-block;
+        }
+
+        .reviews-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .reviews-summary {
+                grid-template-columns: auto 1fr;
+            }
+        }
+
+        .overall-rating {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7c3aed;
+            line-height: 1;
+        }
+
+        .rating-stars {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .rating-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .rating-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .rating-bar span:first-child {
+            width: 4rem;
+            color: #6b7280;
+        }
+
+        .rating-bar span:last-child {
+            width: 2rem;
+            text-align: right;
+            color: #6b7280;
+        }
+
+        .bar {
+            flex: 1;
+            height: 0.5rem;
+            background: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 9999px;
+            transition: width 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-section {
+                padding: 3rem 0;
+            }
+            
+            .reviews-title {
+                font-size: 2rem;
+            }
+            
+            .review-card {
+                padding: 1rem;
+            }
+            
+            .reviews-summary {
+                padding: 1.5rem;
+            }
+            
+            .rating-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #581c87;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 2rem 0;
+            }
+            
+            .footer-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo svg {
+            height: 2rem;
+            width: 2rem;
+            color: #c084fc;
+        }
+
+        .footer-logo span {
+            margin-left: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .footer-description {
+            color: #c4b5fd;
+        }
+
+        .footer-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #c4b5fd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #c4b5fd;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .social-links svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #6b21a8;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #c4b5fd;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 3rem 0;
+            }
+            
+            .about-content {
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6b21a8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-description {
+            font-size: 1.125rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #6b21a8;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #e9d5ff, #c4b5fd);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .craft-illustration {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .yarn-ball, .hook, .heart {
+            font-size: 3rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2rem;
+            }
+            
+            .about-description {
+                font-size: 1rem;
+            }
+            
+            .image-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .yarn-ball, .hook, .heart {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #6b21a8;
+            margin-bottom: 3rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 3rem 0;
+            }
+            
+            .contact-title {
+                font-size: 2rem;
+            }
+            
+            .contact-content {
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #faf5ff;
+            border-radius: 1rem;
+            border-left: 4px solid #7c3aed;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #6b21a8;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p {
+            color: #6b7280;
+        }
+
+        .contact-form {
+            background: #faf5ff;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6b21a8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .contact-form button {
+            background: #7c3aed;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background: #6d28d9;
+        }
+
+        @media (max-width: 768px) {
+            .contact-item {
+                padding: 1rem;
+            }
+            
+            .contact-icon {
+                font-size: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .contact-form h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Cart Sidebar */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: white;
+            z-index: 101;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                max-width: 100%;
+            }
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #6b21a8;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .cart-item-info h4 {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-info p {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+            color: #7c3aed;
+        }
+
+        .remove-item {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #374151;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #16a34a;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: #15803d;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+        }
+
+        .empty-cart-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Checkout Page */
+        .checkout-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .checkout-page.active {
+            display: flex;
+        }
+
+        .checkout-container {
+            background: white;
+            border-radius: 1rem;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .checkout-header {
+            padding: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #faf5ff;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .checkout-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6b21a8;
+        }
+
+        .close-checkout {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .close-checkout:hover {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .checkout-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .checkout-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .billing-section {
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .form-input.error {
+            border-color: #ef4444;
+        }
+
+        .order-summary {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            height: fit-content;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details h4 {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-details p {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .item-price {
+            font-weight: 600;
+            color: #7c3aed;
+        }
+
+        .summary-total {
+            background: #7c3aed;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .delivery-options {
+            margin: 1.5rem 0;
+        }
+
+        .delivery-option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .delivery-option:hover {
+            border-color: #7c3aed;
+            background: #faf5ff;
+        }
+
+        .delivery-option.selected {
+            border-color: #7c3aed;
+            background: #faf5ff;
+        }
+
+        .delivery-option input[type="radio"] {
+            margin-right: 0.75rem;
+            accent-color: #7c3aed;
+        }
+
+        .delivery-info h4 {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .delivery-info p {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .delivery-price {
+            margin-left: auto;
+            font-weight: 600;
+            color: #7c3aed;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            background: #16a34a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .place-order-btn:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .place-order-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                margin: 0.5rem;
+                max-height: 95vh;
+            }
+            
+            .checkout-header {
+                padding: 1.5rem;
+            }
+            
+            .checkout-content {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            
+            .billing-section,
+            .order-summary {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="currentColor"/>
+                    </svg>
+                    <span>Hooked by Lulu</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#">Collections</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                        <button onclick="searchProducts()" class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button onclick="toggleCart()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Handcrafted with 💜</h1>
+            <p>Discover unique, handmade crochet creations that bring warmth and beauty to your home</p>
+            <button class="hero-btn">Shop Collection</button>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-buttons">
+                <button class="category-btn active" onclick="filterProducts('all')">All Items</button>
+                <button class="category-btn" onclick="filterProducts('blankets')">Blankets</button>
+                <button class="category-btn" onclick="filterProducts('amigurumi')">Amigurumi</button>
+                <button class="category-btn" onclick="filterProducts('accessories')">Accessories</button>
+                <button class="category-btn" onclick="filterProducts('home')">Home Decor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="products-title">Featured Creations</h2>
+            <div class="products-grid" id="products-grid">
+                
+                <!-- Product 1 -->
+                <div class="product-card" data-category="blankets">
+                    <div class="product-image bg-pink-purple">
+                        <div>🧶</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cozy Rainbow Blanket</h3>
+                        <p class="product-description">Soft and colorful throw perfect for snuggling</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦89,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="amigurumi">
+                    <div class="product-image bg-yellow-orange">
+                        <div>🐻</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Teddy Bear Buddy</h3>
+                        <p class="product-description">Adorable handmade teddy bear for all ages</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦35,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image bg-blue-teal">
+                        <div>🧢</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Winter Beanie</h3>
+                        <p class="product-description">Warm and stylish hat for cold days</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦25,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image bg-green-emerald">
+                        <div>🌸</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Flower Pot Cover</h3>
+                        <p class="product-description">Beautiful decorative cover for your plants</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦18,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="amigurumi">
+                    <div class="product-image bg-red-pink">
+                        <div>🐰</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bunny Friend</h3>
+                        <p class="product-description">Cute crocheted rabbit with floppy ears</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦32,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image bg-purple-indigo">
+                        <div>🧣</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cozy Scarf</h3>
+                        <p class="product-description">Long, warm scarf in beautiful colors</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦42,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image bg-amber-yellow">
+                        <div>🕯️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Candle Holder</h3>
+                        <p class="product-description">Decorative crocheted candle holder</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦15,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-category="blankets">
+                    <div class="product-image bg-teal-cyan">
+                        <div>🌊</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ocean Waves Throw</h3>
+                        <p class="product-description">Beautiful blue-toned blanket with wave pattern</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦95,000</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="reviews-title">What Our Customers Say</h2>
+            <div class="reviews-grid">
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👩🏽</div>
+                            <div>
+                                <h4 class="customer-name">Sarah M.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">2 weeks ago</div>
+                    </div>
+                    <p class="review-text">"The rainbow blanket is absolutely gorgeous! The colors are so vibrant and it's incredibly soft. My daughter loves snuggling with it every night. Lulu's craftsmanship is amazing!"</p>
+                    <div class="review-product">Cozy Rainbow Blanket</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👨🏿</div>
+                            <div>
+                                <h4 class="customer-name">David O.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">1 month ago</div>
+                    </div>
+                    <p class="review-text">"Ordered a custom teddy bear for my nephew's birthday. The attention to detail is incredible - even added his favorite colors! Fast delivery and excellent communication."</p>
+                    <div class="review-product">Custom Teddy Bear</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👩🏻</div>
+                            <div>
+                                <h4 class="customer-name">Emma K.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">3 weeks ago</div>
+                    </div>
+                    <p class="review-text">"The winter beanie is perfect! Keeps me warm and looks stylish. I've gotten so many compliments. Already planning my next order!"</p>
+                    <div class="review-product">Winter Beanie</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👩🏾</div>
+                            <div>
+                                <h4 class="customer-name">Kemi A.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">1 week ago</div>
+                    </div>
+                    <p class="review-text">"Beautiful flower pot covers! They transformed my living room. The quality is outstanding and they arrived exactly as pictured. Highly recommend!"</p>
+                    <div class="review-product">Flower Pot Cover Set</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👨🏽</div>
+                            <div>
+                                <h4 class="customer-name">James L.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">2 months ago</div>
+                    </div>
+                    <p class="review-text">"Bought the ocean waves throw as a housewarming gift. The recipient was thrilled! The pattern is stunning and the quality is top-notch. Will definitely order again."</p>
+                    <div class="review-product">Ocean Waves Throw</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">👩🏼</div>
+                            <div>
+                                <h4 class="customer-name">Lisa R.</h4>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">5 days ago</div>
+                    </div>
+                    <p class="review-text">"Amazing customer service! Lulu helped me choose the perfect colors for my home. The scarf is beautifully made and arrived quickly. 10/10 experience!"</p>
+                    <div class="review-product">Cozy Scarf</div>
+                </div>
+
+            </div>
+            
+            <div class="reviews-summary">
+                <div class="overall-rating">
+                    <div class="rating-number">4.9</div>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="rating-text">Based on 47 reviews</div>
+                </div>
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span>5 stars</span>
+                        <div class="bar"><div class="fill" style="width: 94%"></div></div>
+                        <span>44</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>4 stars</span>
+                        <div class="bar"><div class="fill" style="width: 6%"></div></div>
+                        <span>3</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>3 stars</span>
+                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                        <span>0</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>2 stars</span>
+                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                        <span>0</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>1 star</span>
+                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="about-title">About Hooked by Lulu</h2>
+                    <p class="about-description">
+                        Welcome to Hooked by Lulu, where every stitch tells a story of passion, creativity, and love. 
+                        Founded by Lulu, a dedicated crochet artist with over 10 years of experience, our brand brings 
+                        you handcrafted treasures that add warmth and beauty to your everyday life.
+                    </p>
+                    <p class="about-description">
+                        Each piece is carefully crafted using premium yarns and traditional techniques, ensuring 
+                        durability and comfort. From cozy blankets that wrap you in warmth to adorable amigurumi 
+                        that bring smiles to faces, every creation is made with meticulous attention to detail.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">🧶</div>
+                            <div class="feature-text">
+                                <h3>Premium Materials</h3>
+                                <p>Only the finest yarns and materials for lasting quality</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💜</div>
+                            <div class="feature-text">
+                                <h3>Made with Love</h3>
+                                <p>Every piece is handcrafted with care and attention</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-text">
+                                <h3>Custom Orders</h3>
+                                <p>Personalized creations to match your unique style</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="craft-illustration">
+                            <div class="yarn-ball">🧶</div>
+                            <div class="hook">🪝</div>
+                            <div class="heart">💜</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hookedbylulu@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+234 801 234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h3>Response Time</h3>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="currentColor"/>
+                        </svg>
+                        <span>Hooked by Lulu</span>
+                    </div>
+                    <p class="footer-description">Handcrafted crochet creations made with love and care.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Custom Orders</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Customer Care</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.017.001z.017 0z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hooked by Lulu. All rights reserved. Made with 💜</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Shopping Cart</h3>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total: </span>
+                <span id="cart-total">₦0</span>
+            </div>
+            <button class="checkout-btn" onclick="openCheckout()">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Page -->
+    <div class="checkout-page" id="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h2 class="checkout-title">Checkout</h2>
+                <button class="close-checkout" onclick="closeCheckout()">×</button>
+            </div>
+            
+            <div class="checkout-content">
+                <!-- Billing Details -->
+                <div class="billing-section">
+                    <h3 class="section-title">
+                        📋 Billing Details
+                    </h3>
+                    
+                    <form id="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+234 801 234 5678" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="address">Street Address *</label>
+                            <input type="text" id="address" class="form-input" placeholder="House number and street name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="city">City *</label>
+                                <input type="text" id="city" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="state">State *</label>
+                                <input type="text" id="state" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="notes">Order Notes (Optional)</label>
+                            <textarea id="notes" class="form-input" rows="3" placeholder="Special instructions for your order..."></textarea>
+                        </div>
+                    </form>
+                    
+                    <!-- Delivery Options -->
+                    <h3 class="section-title" style="margin-top: 2rem;">
+                        🚚 Delivery Options
+                    </h3>
+                    
+                    <div class="delivery-options">
+                        <div class="delivery-option selected" onclick="selectDelivery(this, 2000)">
+                            <input type="radio" name="delivery" value="standard" checked>
+                            <div class="delivery-info">
+                                <h4>Standard Delivery</h4>
+                                <p>5-7 business days within Lagos</p>
+                            </div>
+                            <div class="delivery-price">₦2,000</div>
+                        </div>
+                        
+                        <div class="delivery-option" onclick="selectDelivery(this, 5000)">
+                            <input type="radio" name="delivery" value="express">
+                            <div class="delivery-info">
+                                <h4>Express Delivery</h4>
+                                <p>2-3 business days within Lagos</p>
+                            </div>
+                            <div class="delivery-price">₦5,000</div>
+                        </div>
+                        
+                        <div class="delivery-option" onclick="selectDelivery(this, 8000)">
+                            <input type="radio" name="delivery" value="nationwide">
+                            <div class="delivery-info">
+                                <h4>Nationwide Delivery</h4>
+                                <p>7-10 business days anywhere in Nigeria</p>
+                            </div>
+                            <div class="delivery-price">₦8,000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3 class="section-title">
+                        📦 Order Summary
+                    </h3>
+                    
+                    <div id="checkout-items">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="checkout-subtotal">₦0</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Delivery:</span>
+                        <span id="checkout-delivery">₦2,000</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="checkout-total">₦0</span>
+                    </div>
+                    
+                    <button class="place-order-btn" onclick="placeOrder()">
+                        Place Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+
+        function updateCartBadge() {
+            const cartCount = document.getElementById('cart-count');
+            cartCount.textContent = cart.length;
+            cartCount.style.display = cart.length > 0 ? 'flex' : 'none';
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartFooter = document.getElementById('cart-footer');
+            const cartTotal = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                let total = 0;
+                cartItems.innerHTML = cart.map((item, index) => {
+                    total += item.price;
+                    return `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${item.name}</h4>
+                                <p>Qty: 1</p>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <span class="cart-item-price">₦${item.price.toLocaleString()}</span>
+                                <button class="remove-item" onclick="removeFromCart(${index})">×</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                cartTotal.textContent = `₦${total.toLocaleString()}`;
+                cartFooter.style.display = 'block';
+            }
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartBadge();
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartBadge();
+            updateCartDisplay();
+        }
+
+        function toggleCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const sidebar = document.getElementById('cart-sidebar');
+            
+            overlay.classList.add('active');
+            sidebar.classList.add('active');
+        }
+
+        function closeCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const sidebar = document.getElementById('cart-sidebar');
+            
+            overlay.classList.remove('active');
+            sidebar.classList.remove('active');
+        }
+
+        let deliveryFee = 2000; // Default delivery fee
+
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            updateCheckoutSummary();
+            document.getElementById('checkout-page').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-page').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateCheckoutSummary() {
+            const checkoutItems = document.getElementById('checkout-items');
+            const checkoutSubtotal = document.getElementById('checkout-subtotal');
+            const checkoutDelivery = document.getElementById('checkout-delivery');
+            const checkoutTotal = document.getElementById('checkout-total');
+            
+            let subtotal = 0;
+            
+            // Populate items
+            checkoutItems.innerHTML = cart.map(item => {
+                subtotal += item.price;
+                return `
+                    <div class="summary-item">
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>Qty: 1</p>
+                        </div>
+                        <div class="item-price">₦${item.price.toLocaleString()}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Update totals
+            checkoutSubtotal.textContent = `₦${subtotal.toLocaleString()}`;
+            checkoutDelivery.textContent = `₦${deliveryFee.toLocaleString()}`;
+            checkoutTotal.textContent = `₦${(subtotal + deliveryFee).toLocaleString()}`;
+        }
+
+        function selectDelivery(element, fee) {
+            // Remove selected class from all options
+            document.querySelectorAll('.delivery-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Update the radio button
+            element.querySelector('input[type="radio"]').checked = true;
+            
+            // Update delivery fee
+            deliveryFee = fee;
+            updateCheckoutSummary();
+        }
+
+        function validateForm() {
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address', 'city', 'state'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            // Email validation
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value && !emailRegex.test(email.value)) {
+                email.classList.add('error');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function placeOrder() {
+            if (!validateForm()) {
+                alert('Please fill in all required fields correctly.');
+                return;
+            }
+            
+            // Get form data
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const notes = document.getElementById('notes').value;
+            
+            // Get selected delivery option
+            const selectedDelivery = document.querySelector('input[name="delivery"]:checked');
+            const deliveryType = selectedDelivery.value;
+            const deliveryText = selectedDelivery.parentElement.querySelector('h4').textContent;
+            
+            // Calculate totals
+            let subtotal = 0;
+            cart.forEach(item => subtotal += item.price);
+            const total = subtotal + deliveryFee;
+            
+            // Create WhatsApp message
+            let message = `🛍️ *NEW ORDER FROM HOOKED BY LULU*\n\n`;
+            message += `👤 *Customer Details:*\n`;
+            message += `Name: ${firstName} ${lastName}\n`;
+            message += `Email: ${email}\n`;
+            message += `Phone: ${phone}\n\n`;
+            
+            message += `📍 *Delivery Address:*\n`;
+            message += `${address}\n`;
+            message += `${city}, ${state}\n\n`;
+            
+            message += `📦 *Order Items:*\n`;
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} - ₦${item.price.toLocaleString()}\n`;
+            });
+            
+            message += `\n💰 *Order Summary:*\n`;
+            message += `Subtotal: ₦${subtotal.toLocaleString()}\n`;
+            message += `Delivery (${deliveryText}): ₦${deliveryFee.toLocaleString()}\n`;
+            message += `*Total: ₦${total.toLocaleString()}*\n\n`;
+            
+            if (notes) {
+                message += `📝 *Special Instructions:*\n${notes}\n\n`;
+            }
+            
+            message += `Please confirm this order and let me know the payment details. Thank you! 💜`;
+            
+            const whatsappUrl = `https://wa.me/2348012345678?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Clear cart and close checkout
+            cart = [];
+            updateCartBadge();
+            updateCartDisplay();
+            closeCheckout();
+            
+            // Show success message
+            alert('Order sent! You will be redirected to WhatsApp to complete your order.');
+        }
+
+        function whatsappCheckout() {
+            openCheckout();
+        }
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter products
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                    product.style.opacity = '0';
+                    setTimeout(() => {
+                        product.style.opacity = '1';
+                    }, 100);
+                } else {
+                    product.style.opacity = '0';
+                    setTimeout(() => {
+                        product.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Add to cart functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart')) {
+                const button = e.target;
+                const productCard = button.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productPriceText = productCard.querySelector('.product-price').textContent;
+                const productPrice = parseInt(productPriceText.replace(/[₦,]/g, ''));
+                
+                addToCart(productName, productPrice);
+                
+                const originalText = button.textContent;
+                button.textContent = 'Added! ✓';
+                button.classList.add('added');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('added');
+                }, 2000);
+            }
+        });
+
+        // Search functionality
+        function searchProducts() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            // Reset category buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            
+            let hasResults = false;
+            
+            products.forEach(product => {
+                const productName = product.querySelector('.product-title').textContent.toLowerCase();
+                const productDescription = product.querySelector('.product-description').textContent.toLowerCase();
+                
+                if (searchTerm === '' || productName.includes(searchTerm) || productDescription.includes(searchTerm)) {
+                    product.style.display = 'block';
+                    product.style.opacity = '1';
+                    hasResults = true;
+                } else {
+                    product.style.opacity = '0';
+                    setTimeout(() => {
+                        product.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Show "no results" message if needed
+            if (!hasResults && searchTerm !== '') {
+                showNoResults();
+            } else {
+                hideNoResults();
+            }
+        }
+
+        function showNoResults() {
+            let noResultsDiv = document.getElementById('no-results');
+            if (!noResultsDiv) {
+                noResultsDiv = document.createElement('div');
+                noResultsDiv.id = 'no-results';
+                noResultsDiv.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: #6b7280;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #374151;">No products found</h3>
+                        <p>Try searching for something else or browse our categories above.</p>
+                    </div>
+                `;
+                document.getElementById('products-grid').appendChild(noResultsDiv);
+            }
+            noResultsDiv.style.display = 'block';
+        }
+
+        function hideNoResults() {
+            const noResultsDiv = document.getElementById('no-results');
+            if (noResultsDiv) {
+                noResultsDiv.style.display = 'none';
+            }
+        }
+
+        // Add enter key support for search
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+
+        // Clear search when category is selected
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            const searchInput = document.getElementById('search-input');
+            
+            // Clear search input
+            searchInput.value = '';
+            hideNoResults();
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter products
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                    product.style.opacity = '0';
+                    setTimeout(() => {
+                        product.style.opacity = '1';
+                    }, 100);
+                } else {
+                    product.style.opacity = '0';
+                    setTimeout(() => {
+                        product.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Initialize cart display
+        updateCartBadge();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'981ec35e20259583',t:'MTc1ODM0NDQ2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
